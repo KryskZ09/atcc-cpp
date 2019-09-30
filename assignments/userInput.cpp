@@ -1,3 +1,8 @@
+// Clayton Jensen
+// Programming 1
+// Unknown Date
+// User Input Program
+
 #include <iostream>
 using namespace std;
 
