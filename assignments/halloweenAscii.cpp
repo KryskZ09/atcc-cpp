@@ -25,8 +25,14 @@ int main()
             "| O \\\n"
             " \\   \\\n"
             "  `~~~'\n";
-    
-    cout << "Welcome to the Halloween Ascii Art Repository!\nAll art provided by https://asciiart.website, all rights reserved to creators of said art!\n" << endl;
+
+    cout << "Welcome to the Halloween Ascii Art Repository!\nAll art provided by https://asciiart.website, all rights reserved to creators of said art!\n"
+         << endl;
+
+    cout << "Press Enter To Continue...";
+    cin.get();
+
+    clear();
 
     bool isRunning = true;
     while (isRunning)
@@ -37,7 +43,7 @@ int main()
         cout << "[ Boo ] | [ Witch ] | [ Cauldron ] | QUIT\n~> ";
         cin >> asciiSelection;
         asciiSelection = toLower(asciiSelection);
-        
+
         clear();
 
         if (asciiSelection == "quit")
