@@ -1,15 +1,9 @@
-
 #include <iostream>
-#include <cctype>
-#include <algorithm>
-#include <stdlib.h>
-#include "ease/ofuse.h"
+#include "ease/of_use.h"
 using namespace std;
-using namespace ease;
 
 int main()
 {
-
     cout << " .-.\n"
             "(o o)\n"
             "| O \\\n"
@@ -22,7 +16,7 @@ int main()
     cout << "Press Enter To Continue...";
     cin.get();
 
-    clear();
+    ease::clear();
 
     bool isRunning = true;
     while (isRunning)
@@ -32,14 +26,14 @@ int main()
         cout << "Type 'QUIT' to exit the program!" << endl;
         cout << "[ Boo ] | [ Witch ] | [ Cauldron ] | QUIT\n~> ";
         cin >> asciiSelection;
-        asciiSelection = toLower(asciiSelection);
+        asciiSelection = ease::toLower(asciiSelection);
 
-        clear();
+        ease::clear();
 
         if (asciiSelection == "quit")
         {
             isRunning = false;
-            clear();
+            ease::clear();
         }
 
         if (asciiSelection == "boo")
