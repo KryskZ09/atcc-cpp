@@ -3,19 +3,9 @@
 #include <cctype>
 #include <algorithm>
 #include <stdlib.h>
+#include "ease/ofuse.h"
 using namespace std;
-
-void clear()
-{
-    cout << flush;
-    system("clear");
-}
-
-string toLower(string input)
-{
-    transform(input.begin(), input.end(), input.begin(), ::tolower);
-    return input;
-}
+using namespace ease;
 
 int main()
 {
