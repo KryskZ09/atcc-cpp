@@ -2,6 +2,19 @@
 <h3>I attend a C++ programming class at my school. This repository is to hold all of my files as a backup, an online resource and for other students to see my work.</h3>
 <h4>I'm considering only allowing other students of said class to make corrections, but anyone can pull and change locally.</h4>
 
+## Ease Of Use Header:
+I will be putting functions that I find useful. Usually these are functions that have weird functionality,
+such as a system-independent clear or a to-lowercase function.
+#### clear() -> void
+Clears the terminal screen.
+Uses directives to decide the system type, and runs a system command based on the type.
+Unix-based systems will use system("clear") while DOS-based systems will use system("cls").
+#### toLower() -> string
+Converts a string to lowercase. I honestly code this snippet from StackOverflow and implemented it.
+Because of this I have
+####
+* /assignments/ease/of_use.h
+
 
 ## Assignments:
 #### Car Payment Calculator

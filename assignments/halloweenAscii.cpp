@@ -1,3 +1,8 @@
+// Clayton Jensen
+// Programming 1
+// October 2nd, 2019
+// Halloween Ascii
+
 #include <iostream>
 #include "ease/of_use.h"
 using namespace std;

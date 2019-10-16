@@ -11,5 +11,5 @@ using namespace std; // Standard namespace
 int main() // interger
 {
     cout << "Hello World" << endl; // Output to console
-    return 0; // End program
+    return 0;                      // End program
 }
