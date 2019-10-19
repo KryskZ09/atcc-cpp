@@ -54,7 +54,7 @@
 #### Halloween Ascii Art Program
 * halloweenAscii.cpp
 
-    Incorporates ascii art from [AsciiArt](asciiart.website) as a repository. The formatting was ironically hell. This was also the first file that spurred me to create the of_use header. The spooky backslash strikes again! BOO!
+    Incorporates ascii art from [AsciiArt](https://asciiart.website) as a repository. The formatting was ironically hell. This was also the first file that spurred me to create the of_use header. The spooky backslash strikes again! BOO!
 
 #### Simple Math Calculator Program
 * simpleMath.cpp
