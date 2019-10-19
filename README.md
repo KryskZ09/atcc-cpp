@@ -1,5 +1,5 @@
 # atcc-cpp
-<h3>I attend(ed) (2019-'20) a C++ programming class at a local career center. This repository is to hold all of my files as a backup, and as an online resource for other students to see my work and grab explantion. I hardly document my code, so sorry if nothing makes sense, and another sorry for my old code being an absolute dumpster fire. Here's another sorry because why not? - Kry</h3>
+<h3>I attend(ed) (2019-'20) a C++ programming class at a local career center. This repository is to hold all of my files as a backup, and as an online resource for other students to see my work and grab inspiration. I hardly document my code, so sorry if nothing makes sense, and another sorry for my old code being an absolute dumpster fire. Here's another sorry because why not? - Kry</h3>
 
 ---
 
