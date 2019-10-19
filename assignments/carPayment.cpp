@@ -4,16 +4,12 @@
 // Car Payment Calculator
 
 #include <iostream>
-#include <iomanip>
+#include "ease/of_use.h"
 
 using namespace std;
 
 int main()
 {
-    // Set the outout to two decimal places.
-    cout << fixed << showpoint;
-    cout << setprecision(2);
-
     string
         firstName,
         lastName;
@@ -41,5 +37,5 @@ int main()
 
     moPayment = carPrice / (12 * loanYears);
 
-    cout << firstName << ' ' << lastName << ", your monthly payment is $" << moPayment << endl;
+    cout << firstName << ' ' << lastName << ", your monthly payment is $" << ease::twoPrecision(moPayment) << endl;
 }

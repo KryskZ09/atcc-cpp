@@ -2,6 +2,7 @@
 // First Block
 
 #include <iostream>
+#include <algorithm>
 
 namespace ease
 {
@@ -42,9 +43,9 @@ std::string toLower(std::string input)
     return input;
 }
 
-float twoPrecision(float var)
+float twoPrecision(float input)
 {
-    float value = (int)(var * 100 + .5);
+    float value = (int)(input * 100 + .5);
     return (float)value / 100;
 }
 
