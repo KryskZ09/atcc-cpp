@@ -5,13 +5,13 @@
 
 #include <iostream>
 #include <iomanip>
-// #include "ease/of_use.h"
 using namespace std;
 
 int main()
 {
     // Declare variables for items
     float totalPayment;
+    float itemOnePrice = 1.99, itemTwoPrice = 2.99, itemThreePrice = 3.99, itemFourPrice = 4.99;
     int itemOneAmt = 0, itemTwoAmt = 0, itemThreeAmt = 0, itemFourAmt = 0;
 
     // Set running flag to true
@@ -21,16 +21,12 @@ int main()
         // Clear the screen on each menu print
         // ease::clear();
         string userChoice;
-        cout << "1) Item One\t:: $1.99\n"
-                "2) Item Two\t:: $2.99\n"
-                "3) Item Three\t:: $3.99\n"
-                "4) Item Four\t:: $4.99\n"
-                "Type 'QUIT' to exit...\n"
-                "=================\n"
-                "Select: ";
+        cout << "1) Item One\t:: $" << itemOnePrice << endl;
+        cout << "2) Item Two\t:: $" << itemTwoPrice << endl;
+        cout << "3) Item Three\t:: $" << itemThreePrice << endl;
+        cout << "4) Item Four\t:: $" << itemFourPrice << endl;
+        cout << "Type 'quit' to exit...\n=================\nSelect: ";
         cin >> userChoice;
-        // Convert userChoice to lowercase for easier condition handling
-        // userChoice = ease::toLower(userChoice);
 
         // Detect user input & quit if necessary
         if (userChoice == "quit")
@@ -60,12 +56,10 @@ int main()
     }
 
     // Calculations
-    totalPayment += (itemOneAmt * 1.99);
-    totalPayment += (itemTwoAmt * 2.99);
-    totalPayment += (itemThreeAmt * 3.99);
-    totalPayment += (itemFourAmt * 4.99);
-
-    // ease::clear();
+    totalPayment += (itemOneAmt * itemOnePrice);
+    totalPayment += (itemTwoAmt * itemTwoPrice);
+    totalPayment += (itemThreeAmt * itemThreePrice);
+    totalPayment += (itemFourAmt * itemFourPrice);
 
     // Print the 'receipt'
     cout << "Receipt\n";
