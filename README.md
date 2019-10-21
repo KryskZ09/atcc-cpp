@@ -3,30 +3,6 @@
 
 ---
 
-## Ease Of Use Header:
-* /assignments/ease/of_use.h
-
-    I will be putting functions that I find useful. Usually these are functions that have weird functionality, such as a system-independent clear or a to-lowercase function.
-
-#### Clear
-* clear() -> void
-
-    Clears the terminal screen.
-    Uses directives to decide the system type, and runs a system command based on the type.
-    Unix-based systems will use system("clear") while DOS-based systems will use system("cls").
-
-#### To Lowercase
-* toLower(string input) -> string
-
-    Converts a string to lowercase. Honestly this snippet came from StackOverflow, all hail SO.
-
-#### Two Precision (aka $$$)
-* twoPrecision(float input) -> float (#.##)
-
-    This casts the input as an integer, and then works some voodoo magic and converts it to a double-precision decimal value. In my class we do a lot with money, and of course money rounds to the hundredths place. Dolla dolla bills y'all.
-
----
-
 ## Assignments:
 #### Base Menu Program
 * baseMenu.cpp
@@ -83,6 +59,11 @@
 * ifElse.cpp
     
     Example usages of If, Else If, Else blocks.
+
+#### Switch Grade
+* switchGrade.cpp
+
+    An example grade program, such as gradeCalc, that uses switch statements to determine the letter grade.
 
 #### C++ File Template
 * fileTemp.cpp

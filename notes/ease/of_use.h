@@ -43,10 +43,4 @@ std::string toLower(std::string input)
     return input;
 }
 
-float twoPrecision(float input)
-{
-    float value = (int)(input * 100 + .5);
-    return (float)value / 100;
-}
-
 } // namespace ease

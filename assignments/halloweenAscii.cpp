@@ -4,7 +4,7 @@
 // Halloween Ascii
 
 #include <iostream>
-#include "ease/of_use.h"
+// #include "ease/of_use.h"
 using namespace std;
 
 int main()
@@ -21,8 +21,6 @@ int main()
     cout << "Press Enter To Continue...";
     cin.get();
 
-    ease::clear();
-
     bool isRunning = true;
     while (isRunning)
     {
@@ -31,17 +29,12 @@ int main()
         cout << "Type 'QUIT' to exit the program!" << endl;
         cout << "[ Boo ] | [ Witch ] | [ Cauldron ] | QUIT\n~> ";
         cin >> asciiSelection;
-        asciiSelection = ease::toLower(asciiSelection);
-
-        ease::clear();
 
         if (asciiSelection == "quit")
         {
             isRunning = false;
-            ease::clear();
         }
-
-        if (asciiSelection == "boo")
+        else if (asciiSelection == "boo")
         {
             cout << "_______________                _________                 _________\n"
                     "|               `-_          .-'   ``-_  `-.           .-'   ``-_  `-.\n"
@@ -59,8 +52,7 @@ int main()
                     " ~~~~~~~~~~~~~~     Normand     ~~~~~~~~~     Veilleux    ~~~~~~~~~\n"
                     "\n\n\n";
         }
-
-        if (asciiSelection == "witch")
+        else if (asciiSelection == "witch")
         {
             cout << "                     Double, double\n"
                     "                     Toil and trouble\n"
@@ -83,8 +75,7 @@ int main()
                     "      @---()_.'---@\n"
                     "\n\n\n";
         }
-
-        if (asciiSelection == "cauldron")
+        else if (asciiSelection == "cauldron")
         {
             cout << "             (\n"
                     "           )  )\n"

@@ -5,21 +5,21 @@
 
 #include <iostream>
 #include <iomanip>
-#include "ease/of_use.h"
+// #include "ease/of_use.h"
 using namespace std;
 
 int main()
 {
-    // Declare variables for cost and item amounts
+    // Declare variables for items
     float totalPayment;
-    int itemOneAmt, itemTwoAmt, itemThreeAmt, itemFourAmt;
+    int itemOneAmt = 0, itemTwoAmt = 0, itemThreeAmt = 0, itemFourAmt = 0;
 
     // Set running flag to true
     bool isRunning = true;
     while (isRunning)
     {
         // Clear the screen on each menu print
-        ease::clear();
+        // ease::clear();
         string userChoice;
         cout << "1) Item One\t:: $1.99\n"
                 "2) Item Two\t:: $2.99\n"
@@ -30,7 +30,7 @@ int main()
                 "Select: ";
         cin >> userChoice;
         // Convert userChoice to lowercase for easier condition handling
-        userChoice = ease::toLower(userChoice);
+        // userChoice = ease::toLower(userChoice);
 
         // Detect user input & quit if necessary
         if (userChoice == "quit")
@@ -65,17 +65,17 @@ int main()
     totalPayment += (itemThreeAmt * 3.99);
     totalPayment += (itemFourAmt * 4.99);
 
-    ease::clear();
+    // ease::clear();
 
     // Print the 'receipt'
     cout << "Receipt\n";
-    cout << "======================\n";
+    cout << "============================================\n";
     cout << "Item One\t#: " << itemOneAmt << endl;
     cout << "Item Two\t#: " << itemTwoAmt << endl;
     cout << "Item Three\t#: " << itemThreeAmt << endl;
     cout << "Item Four\t#: " << itemFourAmt << endl;
-    cout << "----------------------\n";
+    cout << "--------------------------------------------\n";
     cout << "Total Items\t#: " << itemOneAmt + itemTwoAmt + itemThreeAmt + itemFourAmt << endl;
-    cout << "Total\t\t$: " << ease::twoPrecision(totalPayment) << endl;
-    cout << "======================\n";
+    cout << "Total\t\t$: " << setprecision(2) << fixed << totalPayment << endl;
+    cout << "============================================\n";
 }
