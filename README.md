@@ -22,6 +22,12 @@
 
     A test for different data type inputs, such as char, float, int and string. Also includes an out-of-lesson if/else block.
 
+#### Evil Diamond
+* evilDiamond.cpp
+
+    Arguably the 'hardest' program assigned so far; the goal is to convert a for-loop that prints a triangle into a diamond.
+    This is done by 'flipping' the for-loop logic and printing an upside down triangle below the one given.
+
 #### Grade Calculator Program
 * gradeCalc.cpp
 

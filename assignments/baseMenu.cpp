@@ -7,25 +7,39 @@
 #include <iomanip>
 using namespace std;
 
+void printAmountQuestion()
+{
+    cout << "How many items do you want?\n#: ";
+}
+
 int main()
 {
     // Declare variables for items
     float totalPayment;
-    float itemOnePrice = 1.99, itemTwoPrice = 2.99, itemThreePrice = 3.99, itemFourPrice = 4.99;
-    int itemOneAmt = 0, itemTwoAmt = 0, itemThreeAmt = 0, itemFourAmt = 0;
+
+    float itemOnePrice = 1.99,
+          itemTwoPrice = 2.99,
+          itemThreePrice = 3.99,
+          itemFourPrice = 4.99,
+          itemFivePrice = 5.99;
+
+    int itemOneAmt = 0,
+        itemTwoAmt = 0,
+        itemThreeAmt = 0,
+        itemFourAmt = 0,
+        itemFiveAmt = 0;
 
     // Set running flag to true
     bool isRunning = true;
     while (isRunning)
     {
-        // Clear the screen on each menu print
-        // ease::clear();
         string userChoice;
         cout << "1) Item One\t:: $" << itemOnePrice << endl;
         cout << "2) Item Two\t:: $" << itemTwoPrice << endl;
         cout << "3) Item Three\t:: $" << itemThreePrice << endl;
         cout << "4) Item Four\t:: $" << itemFourPrice << endl;
-        cout << "Type 'quit' to exit...\n=================\nSelect: ";
+        cout << "5) Item Five\t:: $" << itemFivePrice << endl;
+        cout << "Type 'quit' to exit...\n==================================\nSelect: ";
         cin >> userChoice;
 
         // Detect user input & quit if necessary
@@ -35,23 +49,32 @@ int main()
         }
         else if (userChoice == "1")
         {
-            cout << "How many items do you want?\n#: ";
+            printAmountQuestion();
             cin >> itemOneAmt;
         }
         else if (userChoice == "2")
         {
-            cout << "How many items do you want?\n#: ";
+            printAmountQuestion();
             cin >> itemTwoAmt;
         }
         else if (userChoice == "3")
         {
-            cout << "How many items do you want?\n#: ";
+            printAmountQuestion();
             cin >> itemThreeAmt;
         }
         else if (userChoice == "4")
         {
-            cout << "How many items do you want?\n#: ";
+            printAmountQuestion();
             cin >> itemFourAmt;
+        }
+        else if (userChoice == "5")
+        {
+            printAmountQuestion();
+            cin >> itemFiveAmt;
+        }
+        else
+        {
+            cout << "That item doesn't exist!\n";
         }
     }
 
@@ -60,16 +83,18 @@ int main()
     totalPayment += (itemTwoAmt * itemTwoPrice);
     totalPayment += (itemThreeAmt * itemThreePrice);
     totalPayment += (itemFourAmt * itemFourPrice);
+    totalPayment += (itemFiveAmt * itemFivePrice);
 
-    // Print the 'receipt'
+    // Print the receipt
     cout << "Receipt\n";
-    cout << "============================================\n";
+    cout << "==================================\n";
     cout << "Item One\t#: " << itemOneAmt << endl;
     cout << "Item Two\t#: " << itemTwoAmt << endl;
     cout << "Item Three\t#: " << itemThreeAmt << endl;
     cout << "Item Four\t#: " << itemFourAmt << endl;
-    cout << "--------------------------------------------\n";
-    cout << "Total Items\t#: " << itemOneAmt + itemTwoAmt + itemThreeAmt + itemFourAmt << endl;
-    cout << "Total\t\t$: " << setprecision(2) << fixed << totalPayment << endl;
-    cout << "============================================\n";
+    cout << "Item Five\t#: " << itemFiveAmt << endl;
+    cout << "----------------------------------\n";
+    cout << "Total Items\t#: " << itemOneAmt + itemTwoAmt + itemThreeAmt + itemFourAmt + itemFourAmt << endl;
+    cout << "Total Price\t$: " << setprecision(2) << fixed << totalPayment << endl;
+    cout << "==================================\n";
 }
