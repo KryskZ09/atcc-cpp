@@ -11,11 +11,11 @@ int main()
     // Declare Variables
     // Inheritance Bypass
     float fNumOne,
-          fNumTwo,
-          fSum,
-          fDiff,
-          fProd,
-          fQuot;
+        fNumTwo,
+        fSum,
+        fDiff,
+        fProd,
+        fQuot;
 
     cout << "Number One: ";
     cin >> fNumOne;
@@ -23,15 +23,15 @@ int main()
     cout << "Number Two: ";
     cin >> fNumTwo;
 
-    fSum  = fNumOne + fNumTwo;
+    fSum = fNumOne + fNumTwo;
     fDiff = fNumOne - fNumTwo;
     fProd = fNumOne * fNumTwo;
     fQuot = fNumOne / fNumTwo;
 
-    cout << "Sum of ("        << fNumOne << " + " << fNumTwo << ") is " <<  fSum << '.' << endl;
+    cout << "Sum of (" << fNumOne << " + " << fNumTwo << ") is " << fSum << '.' << endl;
     cout << "Difference of (" << fNumOne << " - " << fNumTwo << ") is " << fDiff << '.' << endl;
-    cout << "Product of ("    << fNumOne << " * " << fNumTwo << ") is " << fProd << '.' << endl;
-    cout << "Quotient of ("   << fNumOne << " / " << fNumTwo << ") is " << fQuot << '.' << endl;
+    cout << "Product of (" << fNumOne << " * " << fNumTwo << ") is " << fProd << '.' << endl;
+    cout << "Quotient of (" << fNumOne << " / " << fNumTwo << ") is " << fQuot << '.' << endl;
 
     return 0;
 }

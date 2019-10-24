@@ -30,7 +30,7 @@ int main()
         cout << "[ Boo ] | [ Witch ] | [ Cauldron ] | QUIT\n~> ";
         cin >> asciiSelection;
 
-        if (asciiSelection == "quit")
+        if (asciiSelection == "quit" || asciiSelection == "QUIT")
         {
             isRunning = false;
         }

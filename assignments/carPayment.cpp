@@ -4,7 +4,7 @@
 // Car Payment Calculator
 
 #include <iostream>
-#include "ease/of_use.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -37,5 +37,5 @@ int main()
 
     moPayment = carPrice / (12 * loanYears);
 
-    cout << firstName << ' ' << lastName << ", your monthly payment is $" << ease::twoPrecision(moPayment) << endl;
+    cout << firstName << ' ' << lastName << ", your monthly payment is $" << setprecision(2) << fixed << moPayment << endl;
 }

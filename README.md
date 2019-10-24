@@ -25,7 +25,8 @@
 #### Evil Diamond
 * evilDiamond.cpp
 
-    Arguably the 'hardest' program assigned so far; the goal is to convert a for-loop that prints a triangle into a diamond.
+    Arguably the 'hardest' program assigned so far, hence the 'evil' in the file name. 
+    The goal is to convert a for-loop that prints a triangle into a diamond.
     This is done by 'flipping' the for-loop logic and printing an upside down triangle below the one given.
 
 #### Grade Calculator Program
