@@ -23,12 +23,13 @@ int main()
             cout << ' ';
         }
 
-        // Print the stars required for the current line:
+        // Print the characters required for the current line:
         // Once the spacing loop is exited, this loop is ran until the exit condition is met.
-        // 2 * currentLine-1 keeps the number of characters as an odd number.
+        // 2 * currentLine allows the ability to print the number of characters per line
+        // -1 removes a character from the end of the line
         for (int currentChar = 0; currentChar < 2 * currentLine - 1; currentChar++)
         {
-            cout << '.';
+            cout << '#';
         }
 
         // Decrement the spacing for the next iteration of the spacing for-loop.
@@ -45,17 +46,18 @@ int main()
         // Print the spacing required for the current line:
         // Once this loop is hit, it is fully ran until the exit condition is met.
         // totalSpace increments on each run, making the total totalSpace more than the previous line.
-        for (int currenttotalSpace = 0; currenttotalSpace < totalSpace; currenttotalSpace++)
+        for (int currentSpace = 0; currentSpace < totalSpace; currentSpace++)
         {
             cout << ' ';
         }
 
-        // Print the stars required for the current line:
+        // Print the characters required for the current line:
         // Once the spacing loop is exited, this loop is ran until the exit condition is met.
-        // 2 * currentLine + 1 keeps the number of stars an odd number but as an inversed form of the one above.
+        // 2 * currentLine allows the ability to print the number of characters per line
+        // +1 adds an extra character to the end of each line, this paired with the -1 from the top half fix the alignment issues.
         for (int currentChar = 0; currentChar < 2 * currentLine + 1; currentChar++)
         {
-            cout << ".";
+            cout << '#';
         }
 
         // Increment the spacing for the next iteration of the spacing for-loop.
