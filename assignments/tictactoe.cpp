@@ -3,35 +3,95 @@
 // Novemeber 13, 2019
 // Tic Tac Toe Game (Final Project)
 
-// TODO: Win Conditions
-//     ! See notes detailing the patterns that win conditions have.
+// * DONE: Win Conditions
+//       See notes detailing the patterns that win conditions have.
+// SOLUTION:
+//       Check the many solution patterns and if they all have the same character. If 9 moves are reached without a win then it's automatically a tie.
 
-// TODO: Proper Game System
-//     * Users can choose to play a set of matches, i.e. 3 matches.
+// ! FAIL: Proper Game System
+//       Users can choose to play a set of matches, i.e. 3 matches.
+// REASON:
+//       Resetting the game state (board, positions, etc.) between matches proved to be difficult.
 
 // TODO: Computer Player
 //     * Logic is still complicated, it is necessary to have it choose the best placement for a hard AI.
 //     ? AI Difficulties? Would probably drive me I N S A N E...
 
-// TODO: Placement Error Handling
-//     ! Player is able to place on a spot they've already done so on and skip a turn.
-
-// TODO: System Independent Clear
-//     ? Is it really necessary to be honest? (system("cls") vs. system("clear"))
-
-// DONE: Ternary
-//      Some of the if statements could be refactored into ternary operations.
+// * DONE: Placement Error Handling
+//       Player is able to place on a spot they've already done so on and skip a turn.
 // SOLUTION:
-//      The if statements that made sense to be ternary were rafactored into ternary.
+//       Check if the position has either a 'O' or 'X' and if it does end the game. A nasty solution, but it works.
+
+// * DONE: Ternary
+//       Some of the if statements could be refactored into ternary operations.
+// SOLUTION:
+//       The if statements that made sense to be ternary were rafactored into ternary.
 
 #include <iostream>
 using namespace std;
 
 // Initialize 3x3 (9-space) board with NULL values.
 char board[3][3];
+int moveCount = 1;
 
 // Reference to the drawBoard function for other functions above it.
 void drawBoard();
+
+void winOutput(char player)
+{
+    drawBoard();
+
+    string out;
+
+    player == 'X' ? out = "\nPlayer \033[0;31mX\033[0m Has Won!" : out = "\nPlayer \033[0;34mO\033[0m Has Won!";
+
+    cout << out << endl;
+
+    exit(0);
+}
+
+void checkWin(char player)
+{
+
+    if (board[0][0] == board[1][0] && board[1][0] == board[2][0])
+    {
+        winOutput(player);
+    }
+    else if (board[1][0] == board[1][1] && board[1][1] == board[1][2])
+    {
+        winOutput(player);
+    }
+    else if (board[2][0] == board[2][1] && board[2][1] == board[2][2])
+    {
+        winOutput(player);
+    }
+    else if (board[0][0] == board[0][1] && board[0][1] == board[0][2])
+    {
+        winOutput(player);
+    }
+    else if (board[1][0] == board[1][1] && board[1][1] == board[1][2])
+    {
+        winOutput(player);
+    }
+    else if (board[2][0] == board[2][1] && board[2][1] == board[2][2])
+    {
+        winOutput(player);
+    }
+    else if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+    {
+        winOutput(player);
+    }
+    else if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+    {
+        winOutput(player);
+    }
+    else if (moveCount == 9)
+    {
+        drawBoard();
+        cout << "\nThe game was a tie!\n";
+        exit(0);
+    }
+}
 
 // Get the character in the position provided.
 // row {int} The row of the character.
@@ -46,7 +106,12 @@ char getPos(int row, int col)
 // col {int} The column to set the character in.
 void setPos(int row, int col, char input)
 {
-    if (getPos(row, col) != 'O' && getPos(row, col) != 'X')
+    if (getPos(row, col) == 'O' || getPos(row, col) == 'X')
+    {
+        cout << "An Error Has Occured...\n";
+        exit(-1);
+    }
+    else
     {
         board[row][col] = input;
     }
@@ -129,79 +194,39 @@ int playerInput(char player)
     return playerPos;
 }
 
-// Call the draw() function, and then switch for the playerInput('X') output.
-void xTurn()
+// Call the draw() function, and then switch for the playerInput('X) output.
+void doTurn(char player)
 {
     draw();
 
-    switch (playerInput('X'))
+    switch (playerInput(player))
     {
     case 9:
-        setPos(2, 2, 'X');
+        setPos(2, 2, player);
         break;
     case 8:
-        setPos(2, 1, 'X');
+        setPos(2, 1, player);
         break;
     case 7:
-        setPos(2, 0, 'X');
+        setPos(2, 0, player);
         break;
     case 6:
-        setPos(1, 2, 'X');
+        setPos(1, 2, player);
         break;
     case 5:
-        setPos(1, 1, 'X');
+        setPos(1, 1, player);
         break;
     case 4:
-        setPos(1, 0, 'X');
+        setPos(1, 0, player);
         break;
     case 3:
-        setPos(0, 2, 'X');
+        setPos(0, 2, player);
         break;
     case 2:
-        setPos(0, 1, 'X');
+        setPos(0, 1, player);
         break;
     case 1:
-        setPos(0, 0, 'X');
-        break;
-    default:
-        cout << "An error has occured...\n";
-        break;
-    }
-}
-
-// Call the draw() function, and then switch for the playerInput('O') output.
-void oTurn()
-{
-    draw();
-
-    switch (playerInput('O'))
-    {
-    case 9:
-        setPos(2, 2, 'O');
-        break;
-    case 8:
-        setPos(2, 1, 'O');
-        break;
-    case 7:
-        setPos(2, 0, 'O');
-        break;
-    case 6:
-        setPos(1, 2, 'O');
-        break;
-    case 5:
-        setPos(1, 1, 'O');
-        break;
-    case 4:
-        setPos(1, 0, 'O');
-        break;
-    case 3:
-        setPos(0, 2, 'O');
-        break;
-    case 2:
-        setPos(0, 1, 'O');
-        break;
-    case 1:
-        setPos(0, 0, 'O');
+        setPos(0, 0, player);
         break;
     default:
         cout << "An error has occured...\n";
@@ -214,7 +239,11 @@ int main()
 {
     while (true)
     {
-        xTurn();
-        oTurn();
+        doTurn('X');
+        checkWin('X');
+        moveCount++;
+        doTurn('O');
+        checkWin('O');
+        moveCount++;
     }
 }
