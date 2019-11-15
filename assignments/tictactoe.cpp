@@ -34,16 +34,24 @@ using namespace std;
 char board[3][3];
 int moveCount = 1;
 
-// Reference to the drawBoard function for other functions above it.
+// Reference to the drawBoard function.
 void drawBoard();
+
+// Clear the screen, draw the board, and add a newline.
+void draw()
+{
+    system("clear");
+    drawBoard();
+    cout << '\n';
+}
 
 void winOutput(char player)
 {
-    drawBoard();
+    draw();
 
     string out;
 
-    player == 'X' ? out = "\nPlayer \033[0;31mX\033[0m Has Won!" : out = "\nPlayer \033[0;34mO\033[0m Has Won!";
+    player == 'X' ? out = "Player \033[0;31mX\033[0m Has Won!" : out = "Player \033[0;34mO\033[0m Has Won!";
 
     cout << out << endl;
 
@@ -73,7 +81,7 @@ void checkWin(char player)
     {
         winOutput(player);
     }
-    else if (board[2][0] == board[2][1] && board[2][1] == board[2][2])
+    else if (board[2][0] == board[2][1] && board[2][1] == board[2][2]) // Row 3, Column 1, 2, 3
     {
         winOutput(player);
     }
@@ -91,8 +99,8 @@ void checkWin(char player)
     }
     else if (moveCount == 9)
     {
-        drawBoard();
-        cout << "\nThe game was a tie!\n";
+        draw();
+        cout << "The game was a tie!\n";
         exit(0);
     }
 }
@@ -119,14 +127,6 @@ void setPos(int row, int col, char input)
     {
         board[row][col] = input;
     }
-}
-
-// Clear the screen, draw the board, and add a newline.
-void draw()
-{
-    system("clear");
-    drawBoard();
-    cout << '\n';
 }
 
 // Loop through the board vector and set any NULL spaces to it's position number, then add barriers to the spaces.
@@ -236,6 +236,8 @@ void doTurn(char player)
         cout << "An error has occured...\n";
         break;
     }
+    checkWin(player);
+    moveCount++;
 }
 
 // Indefinitely play the game until someone wins or tie, calling player X then player O.
@@ -244,10 +246,6 @@ int main()
     while (true)
     {
         doTurn('X');
-        checkWin('X');
-        moveCount++;
         doTurn('O');
-        checkWin('O');
-        moveCount++;
     }
 }
