@@ -53,35 +53,35 @@ void winOutput(char player)
 void checkWin(char player)
 {
 
-    if (board[0][0] == board[1][0] && board[1][0] == board[2][0])
+    if (board[0][0] == board[1][0] && board[1][0] == board[2][0]) // Row 1, 2, 3, Column 1
     {
         winOutput(player);
     }
-    else if (board[1][0] == board[1][1] && board[1][1] == board[1][2])
+    else if (board[0][1] == board[1][1] && board[1][1] == board[2][1]) // Row 1, 2, 3, Column 2
     {
         winOutput(player);
     }
-    else if (board[2][0] == board[2][1] && board[2][1] == board[2][2])
+    else if (board[0][2] == board[1][2] && board[1][2] == board[2][2]) // Row 1, 2, 3, Column 3
     {
         winOutput(player);
     }
-    else if (board[0][0] == board[0][1] && board[0][1] == board[0][2])
+    else if (board[0][0] == board[0][1] && board[0][1] == board[0][2]) // Row 1, Column 1, 2, 3
     {
         winOutput(player);
     }
-    else if (board[1][0] == board[1][1] && board[1][1] == board[1][2])
+    else if (board[1][0] == board[1][1] && board[1][1] == board[1][2]) // Row 2, Column 1, 2, 3
     {
         winOutput(player);
     }
-    else if (board[2][0] == board[2][1] && board[2][1] == board[2][2])
+    else if (board[2][0] == board[2][1] && board[2][1] == board[2][2]) // Row 3, Column 1, 2, 3
     {
         winOutput(player);
     }
-    else if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+    else if (board[0][0] == board[1][1] && board[1][1] == board[2][2]) // Diagonal: TL To BR
     {
         winOutput(player);
     }
-    else if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+    else if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) // Diagonal: TR To BL
     {
         winOutput(player);
     }
@@ -234,7 +234,7 @@ void doTurn(char player)
     }
 }
 
-// Indefinitely play the game, calling player X then player O.
+// Indefinitely play the game until someone wins or tie, calling player X then player O.
 int main()
 {
     while (true)
