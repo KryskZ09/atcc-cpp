@@ -195,7 +195,15 @@ int playerInput(char player)
     cout << out;
     cin >> playerPos;
 
-    return playerPos;
+    if (cin.good())
+    {
+        return playerPos;
+    }
+    else
+    {
+        cout << "An error has occured...\n";
+        exit(-1);
+    }
 }
 
 // Call the draw() function, and then switch for the playerInput('X) output.
