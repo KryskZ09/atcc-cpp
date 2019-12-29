@@ -94,7 +94,7 @@ int main()
     cout << "Item Four\t#: " << itemFourAmt << endl;
     cout << "Item Five\t#: " << itemFiveAmt << endl;
     cout << "----------------------------------\n";
-    cout << "Total Items\t#: " << itemOneAmt + itemTwoAmt + itemThreeAmt + itemFourAmt + itemFourAmt << endl;
+    cout << "Total Items\t#: " << itemOneAmt + itemTwoAmt + itemThreeAmt + itemFourAmt + itemFiveAmt << endl;
     cout << "Total Price\t$: " << setprecision(2) << fixed << totalPayment << endl;
     cout << "==================================\n";
 }

@@ -4,6 +4,8 @@
 // Guessing Game
 
 #include <iostream>
+#include <time>
+
 using namespace std;
 
 void game(int diffMax=0, bool error=false)
@@ -14,7 +16,7 @@ void game(int diffMax=0, bool error=false)
         return;
     }
 
-    srand(time(0));
+    srand(time(NULL));
 
     cout << "HINT: The answer is between 1 and " << diffMax << endl;
     int answer = (rand() % diffMax) + 1;
@@ -33,7 +35,7 @@ void game(int diffMax=0, bool error=false)
             cout << "Incorrect Input!\n";
             return;
         }
-        
+
         string hint;
         guess < answer ? hint = "Too Low..." : guess > answer ? hint = "Too High..." : hint = "Correct!";
         cout << hint << endl;

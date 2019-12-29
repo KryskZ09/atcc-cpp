@@ -3,24 +3,15 @@
 // Novemeber 13, 2019
 // Tic Tac Toe Game (Final Project)
 
-// TODO: Computer Player
-//     * Logic is still complicated, it is necessary to have it choose the best placement for a hard AI.
-//     ? AI Difficulties? Would probably drive me I N S A N E...
-
-// * DONE: Win Conditions
-//       See notes detailing the patterns that win conditions have.
-// SOLUTION:
-//       Check the many solution patterns and if they all have the same character. If 9 moves are reached without a win then it's automatically a tie.
-
-// * DONE: Placement Error Handling
-//       Player is able to place on a spot they've already done so on and skip a turn.
-// SOLUTION:
-//       Check if the position has either a 'O' or 'X' and if it does end the game. A nasty solution, but it works.
-
-// * DONE: Ternary
-//       Some of the if statements could be refactored into ternary operations.
-// SOLUTION:
-//       The if statements that made sense to be ternary were rafactored into ternary.
+/*
+    Includes:
+        - If / Else If / Else Statements
+        - Switch Statements
+        - User Input
+        - Ascii "Art"
+        - While Loops
+        - Math ( See setPos(row, col, (col + 1) + 0x30) )
+*/
 
 #include <iostream>
 using namespace std;
